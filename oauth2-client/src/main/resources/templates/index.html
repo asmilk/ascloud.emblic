@@ -10,6 +10,7 @@
 		<a th:href="@{/index}">/index</a>
 	</div>
 	<div sec:authorize="isAuthenticated()">
+		<img alt="logo" src="/image/logo.jpg" width="100"/>
 		<h1>isAuthenticated</h1>
 		<a th:href="@{/user_info}">/user_info</a>
 		<form th:action="@{/logout}" method="post">
@@ -56,6 +57,12 @@
 			<li><a th:href="@{/api/resc/role/user}">/api/resc/role/user</a></li>
 			<li><a th:href="@{/api/resc/role/admin}">/api/resc/role/admin</a></li>
 		</ul>
+		
+		<form th:action="@{/api/resc/upload}" method="post" enctype="multipart/form-data">
+			<div><input type="text" name="name" /></div>
+			<div><input type="file" name="file" /></div>
+			<input type="submit" value="upload" />
+		</form>
 	</div>
 </body>
 </html>
